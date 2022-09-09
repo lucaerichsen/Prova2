@@ -1,14 +1,23 @@
-public class prova2 {
-    public static void main(String[] args) {
-        double salario = 1000;
-        int ano = 1996;
-        int atual = 2022;
-        int diferenca = atual-ano;
-        double percentual = 1.5;
-        for(int i =1; i<=diferenca; i++){
-            salario=salario+(salario*percentual)/100;
-            percentual*=2;
-        }
-        System.out.println("O salario atual é de: R$"+salario);
-    }
-}
+package prova_08_09;
+
+import java.text.DecimalFormat;
+import java.util.Scanner;
+
+public class e2  {
+	 public static void main(String[] args) {
+	        Scanner ler = new Scanner(System.in);
+	        DecimalFormat df = new DecimalFormat("0.00");
+	        double salario[] = new double[2];
+	        salario[0] = 1000;
+	        salario[1] = salario[0] + (0.015*salario[0]);
+	        int ano = 1997;
+	        double taxa=0.015;
+	        do{
+	            taxa = taxa*2;
+	            salario[1] = salario[1] + (taxa*salario[1]);
+	            ano = ano+1;
+	        } while(ano != 2023);
+	  System.out.println("O salario dele em "+(ano-1)+" foi de R$"+df.format(salario[1]));
+	  ler.close();
+	    }
+	}
